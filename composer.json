@@ -1,6 +1,6 @@
 {
     "name": "jerrylopez/module-phpfpm-status",
-    "description": "A dashboard in the Magento admin panel to monitor the PHP-FPM.",
+    "description": "A dashboard in the Magento admin panel to monitor PHP-FPM.",
     "keywords": ["php", "magento2", "module"],
     "license": "MIT",
     "type": "magento2-module",

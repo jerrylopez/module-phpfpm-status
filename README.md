@@ -1,11 +1,11 @@
-<h3 align="center">Module Template</h3>
+<h3 align="center">PHP-FPM Status</h3>
 
-<p align="center">A template to help you start your next Magento 2 module.</p>
+<p align="center">A dashboard in the Magento admin panel to monitor the PHP-FPM.</p>
 
 <hr />
 
 To utilize this template run the following command:
 
 ```bash
-composer create-project jerrylopez/module-template [module-name]
+composer require jerrylopez/module-phpfpm-status
 ```
