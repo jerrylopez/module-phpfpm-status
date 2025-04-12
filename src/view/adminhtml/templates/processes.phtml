@@ -1,0 +1,57 @@
+<?php
+
+declare(strict_types=1);
+
+use JerryLopez\PhpfpmStatus\Model\Process;
+use JerryLopez\PhpfpmStatus\Model\Status;
+use Magento\Framework\View\Element\Template;
+
+/** @var Template $block */
+/** @var Status $status */
+$status = $block->getData('status')->getStatus();
+?>
+
+<div class="admin__data-grid-wrap admin__data-grid-wrap-static">
+    <table class="data-grid processes-table">
+        <thead>
+        <tr>
+            <th class="data-grid-th"><?= __('Process ID') ?></th>
+            <th class="data-grid-th"><?= __('State') ?></th>
+            <th class="data-grid-th"><?= __('Start Time') ?></th>
+            <th class="data-grid-th"><?= __('Start Since') ?></th>
+            <th class="data-grid-th"><?= __('Requests') ?></th>
+            <th class="data-grid-th"><?= __('Request Duration') ?></th>
+            <th class="data-grid-th"><?= __('Request Method') ?></th>
+            <th class="data-grid-th"><?= __('Request URI') ?></th>
+            <th class="data-grid-th"><?= __('Query String') ?></th>
+            <th class="data-grid-th"><?= __('Request Length') ?></th>
+            <th class="data-grid-th"><?= __('User') ?></th>
+            <th class="data-grid-th"><?= __('Script') ?></th>
+            <th class="data-grid-th"><?= __('Last Request CPU') ?></th>
+            <th class="data-grid-th"><?= __('Last Request Memory') ?></th>
+        </tr>
+        </thead>
+        <tbody>
+        <?php /** @var Process $process */ ?>
+        <?php foreach ($status->getProcesses() as $index => $process): ?>
+            <?php $isEven = $index % 2 === 0; ?>
+            <tr class="<?= $isEven ? 'even' : '' ?>">
+                <td><?= $process->getPid(); ?></td>
+                <td><?= $process->getState(); ?></td>
+                <td><?= $process->getStartTime(); ?></td>
+                <td><?= $process->getStartSince(); ?></td>
+                <td><?= $process->getRequests(); ?></td>
+                <td><?= $process->getRequestDuration(); ?></td>
+                <td><?= $process->getRequestMethod(); ?></td>
+                <td><?= $process->getRequestUri(); ?></td>
+                <td><?= $process->getQueryString(); ?></td>
+                <td><?= $process->getRequestLength(); ?></td>
+                <td><?= $process->getUser(); ?></td>
+                <td><?= $process->getScript(); ?></td>
+                <td><?= $process->getLastRequestCpu(); ?></td>
+                <td><?= $process->getLastRequestMemory(); ?></td>
+            </tr>
+        <?php endforeach; ?>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,52 @@
+{
+    "name": "jerrylopez/module-phpfpm-status",
+    "description": "A dashboard in the Magento admin panel to monitor the PHP-FPM.",
+    "keywords": ["php", "magento2", "module"],
+    "license": "MIT",
+    "type": "magento2-module",
+    "authors": [
+        {
+            "name": "Jerry Lopez",
+            "email": "jerry@92labs.com"
+        }
+    ],
+    "require": {
+        "php": "^8.2.0",
+        "ext-intl": "*"
+    },
+    "autoload": {
+        "files": [
+            "src/registration.php"
+        ],
+        "psr-4": {
+            "JerryLopez\\PhpfpmStatus\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "JerryLopez\\PhpfpmStatus\\Test\\": "test/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "sort-packages": true,
+        "preferred-install": "dist",
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
+    "require-dev": {
+        "dealerdirect/phpcodesniffer-composer-installer": "^1.0",
+        "magento/magento-coding-standard": "^15.0",
+        "rector/rector": "*"
+    },
+    "scripts": {
+        "refactor": "rector",
+        "lint": "phpcs -s --standard=./.phpcs.xml",
+        "test:refactor": "rector --dry-run",
+        "test": [
+            "@test:refactor"
+        ]
+    }
+}

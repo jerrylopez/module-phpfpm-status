@@ -1,0 +1,67 @@
+<?php
+
+declare(strict_types=1);
+
+use JerryLopez\PhpfpmStatus\Model\Status;
+use Magento\Framework\View\Element\Template;
+
+/** @var Template $block */
+/** @var Status $status */
+$status = $block->getData('status')->getStatus();
+?>
+
+<div class="metrics-grid">
+    <div class="metric">
+        <div class="metric__label">
+            <span class="metric__label-text"><?= __('Idle Processes'); ?></span>
+        </div>
+        <div class="metric__value">
+            <span class="metric__value-text"><?= $status->getIdleProcesses(); ?></span>
+        </div>
+    </div>
+
+    <div class="metric">
+        <div class="metric__label">
+            <span class="metric__label-text"><?= __('Active Processes'); ?></span>
+        </div>
+        <div class="metric__value">
+            <span class="metric__value-text"><?= $status->getActiveProcesses(); ?></span>
+        </div>
+    </div>
+
+    <div class="metric">
+        <div class="metric__label">
+            <span class="metric__label-text"><?= __('Total Processes'); ?></span>
+        </div>
+        <div class="metric__value">
+            <span class="metric__value-text"><?= $status->getTotalProcesses(); ?></span>
+        </div>
+    </div>
+
+    <div class="metric">
+        <div class="metric__label">
+            <span class="metric__label-text"><?= __('Max Active Processes'); ?></span>
+        </div>
+        <div class="metric__value">
+            <span class="metric__value-text"><?= $status->getMaxActiveProcesses(); ?></span>
+        </div>
+    </div>
+
+    <div class="metric">
+        <div class="metric__label">
+            <span class="metric__label-text"><?= __('Max Children Reached'); ?></span>
+        </div>
+        <div class="metric__value">
+            <span class="metric__value-text"><?= $status->getMaxChildrenReached(); ?></span>
+        </div>
+    </div>
+
+    <div class="metric">
+        <div class="metric__label">
+            <span class="metric__label-text"><?= __('Slow Requests'); ?></span>
+        </div>
+        <div class="metric__value">
+            <span class="metric__value-text"><?= $status->getSlowRequests(); ?></span>
+        </div>
+    </div>
+</div>

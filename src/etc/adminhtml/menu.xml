@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="JerryLopez_PhpfpmStatus::status_page"
+             title="PHP-FPM Status"
+             module="JerryLopez_PhpfpmStatus"
+             sortOrder="10"
+             resource="JerryLopez_PhpfpmStatus::status_page"
+             action="phpfpm-status/index/index"
+             parent="Magento_Backend::system_tools"/>
+    </menu>
+</config>

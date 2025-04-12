@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="content">
+            <block name="phpfpm.host-information" template="JerryLopez_PhpfpmStatus::host-information.phtml">
+                <arguments>
+                    <argument name="host_information" xsi:type="object">JerryLopez\PhpfpmStatus\ViewModel\HostInformation</argument>
+                </arguments>
+            </block>
+
+            <block name="phpfpm.metrics" template="JerryLopez_PhpfpmStatus::metrics.phtml">
+                <arguments>
+                    <argument name="status" xsi:type="object">JerryLopez\PhpfpmStatus\ViewModel\Status</argument>
+                </arguments>
+            </block>
+
+            <block name="phpfpm.processes" template="JerryLopez_PhpfpmStatus::processes.phtml">
+                <arguments>
+                    <argument name="status" xsi:type="object">JerryLopez\PhpfpmStatus\ViewModel\Status</argument>
+                </arguments>
+            </block>
+        </referenceContainer>
+    </body>
+</page>

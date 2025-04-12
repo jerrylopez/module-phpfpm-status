@@ -1,0 +1,24 @@
+<?php
+
+declare(strict_types=1);
+
+use JerryLopez\PhpfpmStatus\ViewModel\HostInformation;
+use Magento\Framework\View\Element\Template;
+
+/** @var Template $block */
+
+/** @var HostInformation $hostInformation */
+$hostInformation = $block->getData('host_information');
+?>
+
+<div class="information-grid">
+    <div class="information-item">
+        <strong><?= __('Hostname') ?></strong>
+        <span><?= $hostInformation->getHostname() ?></span>
+    </div>
+
+    <div class="information-item">
+        <strong><?= __('IP Address') ?></strong>
+        <span><?= $hostInformation->getIpAddress() ?></span>
+    </div>
+</div>
