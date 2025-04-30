@@ -1,6 +1,6 @@
 <h3 align="center">PHP-FPM Status</h3>
 
-<p align="center">A dashboard in the Magento admin panel to monitor the PHP-FPM.</p>
+<p align="center">A dashboard in the Magento admin panel to monitor PHP-FPM.</p>
 
 <hr />
 
